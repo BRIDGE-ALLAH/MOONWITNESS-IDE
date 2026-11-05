@@ -1,7 +1,7 @@
 #:schema ../extra/schemas/color-theme.json
 
 [color-theme]
-name = "Lapce Dark"
+name = "MOONWITNESS Observatory Dark"
 
 [ui]
 font-family = ""
@@ -14,24 +14,24 @@ scroll-width = 10
 drop-shadow-width = 0
 
 [color-theme.base]
-black = "#282C34"
-blue = "#61AFEF"
-cyan = "#56B6C2"
-green = "#98C379"
-grey = "#3E4451"
-magenta = "#C678DD"
-orange = "#D19A66"
-purple = "#C678DD"
-red = "#E06C75"
-white = "#ABB2BF"
-yellow = "#E5C07B"
+black = "#0B1020"
+blue = "#7B91F5"
+cyan = "#66E0DF"
+green = "#8CCFAD"
+grey = "#34405D"
+magenta = "#B59AF2"
+orange = "#D9A95B"
+purple = "#A7AFFF"
+red = "#FF7B83"
+white = "#E8EEFA"
+yellow = "#F6D99A"
 
 primary-background = "$black"
 # Background for 'secondary' elements: panels, palette, status bar, completion, hover
-secondary-background = "#21252B"
-current-background = "#2C313A"
+secondary-background = "#151E36"
+current-background = "#202A44"
 text = "$white"
-dim-text = "#5C6370"
+dim-text = "#78849D"
 
 [color-theme.syntax]
 "comment" = "$dim-text"
@@ -88,17 +88,17 @@ dim-text = "#5C6370"
 "lapce.border" = "#000000"
 "lapce.scroll_bar" = "#3E4451BB"
 
-"lapce.button.primary.background" = "#50a14f"
-"lapce.button.primary.foreground" = "$black"
+"lapce.button.primary.background" = "#66E0DF"
+"lapce.button.primary.foreground" = "#0B1020"
 
 # tab
 "lapce.tab.active.background" = "$primary-background"
 "lapce.tab.active.foreground" = "$text"
-"lapce.tab.active.underline" = "#528BFF"
+"lapce.tab.active.underline" = "#66E0DF"
 
 "lapce.tab.inactive.background" = "$secondary-background"
 "lapce.tab.inactive.foreground" = "$text"
-"lapce.tab.inactive.underline" = "#528BFF77"
+"lapce.tab.inactive.underline" = "#66E0DF66"
 
 "lapce.tab.separator" = ""
 
@@ -118,12 +118,12 @@ dim-text = "#5C6370"
 "editor.background" = "$primary-background"
 "editor.foreground" = "$text"
 "editor.dim" = "$dim-text"
-"editor.focus" = "#CCCCCC"
-"editor.caret" = "#528BFF"
+"editor.focus" = "#F6D99A"
+"editor.caret" = "#F6D99A"
 "editor.selection" = "$grey"
-"editor.current_line" = "#2C313C"
+"editor.current_line" = "#151E36"
 "editor.debug_break_line" = "#528abF37"
-"editor.link" = "$blue"
+"editor.link" = "$cyan"
 "editor.visible_whitespace" = "$grey"
 "editor.indent_guide" = "$grey"
 "editor.drag_drop_background" = "#79c1fc55"
@@ -171,7 +171,7 @@ dim-text = "#5C6370"
 "panel.current.background" = "$current-background"
 "panel.current.foreground" = "$text"
 "panel.current.foreground.dim" = "$dim-text"
-"panel.hovered.background" = "#343A45"
+"panel.hovered.background" = "#202A44"
 "panel.hovered.active.background" = "$dim-text"
 "panel.hovered.foreground" = "$text"
 "panel.hovered.foreground.dim" = "$dim-text"
