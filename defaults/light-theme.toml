@@ -1,7 +1,7 @@
 #:schema ../extra/schemas/color-theme.json
 
 [color-theme]
-name = "Lapce Light"
+name = "MOONWITNESS Observatory Light"
 
 [ui]
 font-family = ""
@@ -14,24 +14,24 @@ scroll-width = 10
 drop-shadow-width = 0
 
 [color-theme.base]
-black = "#383A42"
-blue = "#4078F2"
-cyan = "#0184BC"
-green = "#50A14F"
-grey = "#E5E5E6"
-magenta = "#A626A4"
-orange = "#D19A66"
-purple = "#A626A4"
-red = "#E45649"
-white = "#FAFAFA"
-yellow = "#C18401"
+black = "#172033"
+blue = "#5264C8"
+cyan = "#087F91"
+green = "#2F7A57"
+grey = "#DCE4F2"
+magenta = "#8652A8"
+orange = "#B77C36"
+purple = "#6D56B3"
+red = "#C13F4D"
+white = "#F8FAFF"
+yellow = "#A66B1F"
 
 primary-background = "$white"
 # Background for 'secondary' elements: panels, palette, status bar, completion, hover
-secondary-background = "#EAEAEB"
-current-background = "#DBDBDC"
+secondary-background = "#EEF2F9"
+current-background = "#E2EAF6"
 text = "$black"
-dim-text = "#A0A1A7"
+dim-text = "#78839A"
 
 [color-theme.syntax]
 "comment" = "$dim-text"
@@ -94,17 +94,17 @@ dim-text = "#A0A1A7"
 "lapce.border" = "#B4B4B4"
 "lapce.scroll_bar" = "#B4B4B4BB"
 
-"lapce.button.primary.background" = "#50a14f"
+"lapce.button.primary.background" = "#087F91"
 "lapce.button.primary.foreground" = "$white"
 
 # tab
 "lapce.tab.active.background" = "$primary-background"
 "lapce.tab.active.foreground" = "$text"
-"lapce.tab.active.underline" = "#528BFF"
+"lapce.tab.active.underline" = "#087F91"
 
 "lapce.tab.inactive.background" = "#EAEAEB"
 "lapce.tab.inactive.foreground" = "$text"
-"lapce.tab.inactive.underline" = "#528BFF77"
+"lapce.tab.inactive.underline" = "#087F9177"
 
 "lapce.tab.separator" = "#B4B4B4"
 
@@ -144,12 +144,12 @@ dim-text = "#A0A1A7"
 "editor.background" = "$primary-background"
 "editor.foreground" = "$text"
 "editor.dim" = "$dim-text"
-"editor.focus" = "#000000"
-"editor.caret" = "#526FFF"
+"editor.focus" = "#172033"
+"editor.caret" = "#B77C36"
 "editor.selection" = "$grey"
-"editor.current_line" = "#F2F2F2"
+"editor.current_line" = "#EEF2F9"
 "editor.debug_break_line" = "#528bFF55"
-"editor.link" = "$blue"
+"editor.link" = "$cyan"
 "editor.visible_whitespace" = "$grey"
 "editor.indent_guide" = "$grey"
 "editor.drag_drop_background" = "#79c1fc33"
