@@ -11,7 +11,7 @@
   <key>CFBundleInfoDictionaryVersion</key>
   <string>6.0</string>
   <key>CFBundleName</key>
-  <string>Lapce</string>
+  <string>MOONWITNESS IDE</string>
   <key>CFBundlePackageType</key>
   <string>APPL</string>
   <key>CFBundleShortVersionString</key>
@@ -35,7 +35,7 @@
   <key>NSRequiresAquaSystemAppearance</key>
   <string>NO</string>
     <key>NSAppleEventsUsageDescription</key>
-    <string>An application in Lapce would like to access AppleScript.</string>
+    <string>MOONWITNESS IDE would like to access AppleScript.</string>
     <key>NSCalendarsUsageDescription</key>
     <string>An application in Lapce would like to access calendar data.</string>
     <key>NSCameraUsageDescription</key>
