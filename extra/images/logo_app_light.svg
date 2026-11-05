@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
   <defs>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="250" y1="60.691" x2="250" y2="439.31" id="gradient-1" gradientTransform="matrix(0.912777, 0.912777, -0.912777, 0.912777, 250.049508, -206.672811)" spreadMethod="pad">
-      <stop offset="0" style="stop-color: rgb(168, 204, 255);"/>
-      <stop offset="1" style="stop-color: rgb(250, 250, 250);"/>
-    </linearGradient>
-    <linearGradient gradientUnits="userSpaceOnUse" x1="10802.515" y1="7688.36" x2="10802.515" y2="13911.66" id="gradient-2" gradientTransform="matrix(-0.028, -0.028, 0.028, -0.028, 233.907039, 905.05849)">
-      <stop offset="0" style="stop-color: rgb(0, 62, 149);"/>
-      <stop offset="1" style="stop-color: rgb(70, 172, 255);"/>
-    </linearGradient>
+    <linearGradient id="bg" x1="60" y1="48" x2="452" y2="464" gradientUnits="userSpaceOnUse"><stop stop-color="#F8FAFF"/><stop offset="1" stop-color="#E5ECF8"/></linearGradient>
+    <linearGradient id="moon" x1="120" y1="90" x2="360" y2="410" gradientUnits="userSpaceOnUse"><stop stop-color="#E7BD72"/><stop offset="1" stop-color="#B77C36"/></linearGradient>
+    <linearGradient id="orbit" x1="64" y1="128" x2="448" y2="390" gradientUnits="userSpaceOnUse"><stop stop-color="#087F91"/><stop offset=".55" stop-color="#5264C8"/><stop offset="1" stop-color="#087F91"/></linearGradient>
+    <mask id="crescent"><rect width="512" height="512" fill="black"/><circle cx="220" cy="250" r="150" fill="white"/><circle cx="300" cy="190" r="132" fill="black"/></mask>
   </defs>
-  <g style="" transform="matrix(1.205162, 0, 0, 1.205162, -51.290611, -51.290611)">
-    <rect x="60.691" y="60.691" width="378.619" height="378.619" rx="40" ry="40" style="stroke: rgb(0, 0, 0); stroke-width: 0px; fill: url(#gradient-1); fill-rule: nonzero;"/>
-    <path d="M 171.945 127.03 L 146.511 112.346 L 146.511 112.729 C 146.511 204.245 146.511 295.758 146.511 387.272 L 146.511 387.655 L 146.843 387.463 C 171.219 373.391 195.594 359.317 219.97 345.243 L 220.08 345.18 L 220.08 315.683 L 172.056 343.411 L 172.056 343.257 C 172.056 271.245 172.057 199.414 172.056 127.221 L 172.056 127.094 L 171.945 127.03 Z M 220.329 184.461 C 258.277 206.37 295.767 228.015 333.714 249.924 L 333.846 250.001 L 333.714 250.077 C 303.976 267.246 274.704 284.147 244.967 301.316 L 244.856 301.379 L 244.856 330.876 L 245.188 330.684 C 283.291 308.684 321.398 286.685 359.5 264.685 L 384.738 250.116 L 384.937 250.001 L 359.5 235.317 C 313.028 208.486 266.559 181.655 220.085 154.824 L 219.969 154.758 L 194.536 140.074 L 194.536 140.457 C 194.536 193.902 194.536 247.346 194.536 300.792 L 194.536 301.175 L 220.086 286.424 L 220.196 286.36 L 220.196 184.384 L 220.329 184.461 Z M 244.856 272.123 L 284.445 249.266 L 244.856 226.406 L 244.856 272.123 Z" style="fill-opacity: 1; fill-rule: evenodd; stroke-width: 0px; fill: url(#gradient-2);" id="path14"/>
-  </g>
+  <rect x="20" y="20" width="472" height="472" rx="112" fill="url(#bg)"/>
+  <path d="M66 282C91 154 204 79 315 99c84 15 137 72 143 143 9 109-126 187-261 179-69-4-116-43-131-90" fill="none" stroke="url(#orbit)" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="220" cy="250" r="150" fill="url(#moon)" mask="url(#crescent)"/>
+  <path d="M256 321v86" stroke="#B77C36" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="256" cy="419" r="17" fill="#087F91"/>
+  <circle cx="433" cy="239" r="13" fill="#087F91"/>
+  <circle cx="93" cy="348" r="10" fill="#5264C8"/>
+  <path d="M122 105l8 21 21 8-21 8-8 21-8-21-21-8 21-8z" fill="#B77C36"/>
 </svg>
