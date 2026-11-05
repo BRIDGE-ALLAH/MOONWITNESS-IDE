@@ -2,13 +2,13 @@
 Version=1.0
 Type=Application
 
-Name=Lapce
-Comment=Lightning-fast and powerful code editor written in Rust
+Name=MOONWITNESS IDE
+Comment=The Engineering Observatory for evidence-driven software development
 Categories=Development;IDE;
-GenericName=Code Editor
+GenericName=Engineering IDE
 StartupWMClass=lapce
 
-Icon=dev.lapce.lapce
+Icon=moonwitness-ide
 Exec=lapce %F
 Terminal=false
 MimeType=text/plain;inode/directory;
