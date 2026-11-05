@@ -7,7 +7,6 @@
 
 <p align="center"><strong>Understand the system. Trace the evidence. Build with intention.</strong></p>
 
-**Understand the system. Trace the evidence. Build with intention.**
 
 MOONWITNESS IDE is an open-source development environment being shaped around a simple belief: software engineering should produce more than working code. It should also produce understanding, traceable decisions, verifiable results, and knowledge that survives beyond a single developer or session.
 
