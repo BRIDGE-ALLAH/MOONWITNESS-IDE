@@ -17,4 +17,4 @@ Actions=new-window;
 [Desktop Action new-window]
 Name=New Window
 Exec=lapce --new %F
-Icon=dev.lapce.lapce
+Icon=moonwitness-ide
