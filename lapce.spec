@@ -1,9 +1,9 @@
-Name:           lapce-git
+Name:           moonwitness-ide
 Version:        0.4.6.{{{ git_dir_version }}}
 Release:        1
-Summary:        Lightning-fast and Powerful Code Editor written in Rust
+Summary:        The Engineering Observatory for evidence-driven software development
 License:        Apache-2.0
-URL:            https://github.com/lapce/lapce
+URL:            https://github.com/BRIDGE-ALLAH/MOONWITNESS-IDE
 
 VCS:            {{{ git_dir_vcs }}}
 Source:        	{{{ git_dir_pack }}}
@@ -25,7 +25,7 @@ cargo build --profile release-lto --package lapce-app --frozen
 install -Dm755 target/release-lto/lapce %{buildroot}%{_bindir}/lapce
 install -Dm644 extra/linux/dev.lapce.lapce.desktop %{buildroot}/usr/share/applications/dev.lapce.lapce.desktop
 install -Dm644 extra/linux/dev.lapce.lapce.metainfo.xml %{buildroot}/usr/share/metainfo/dev.lapce.lapce.metainfo.xml
-install -Dm644 extra/images/logo.png %{buildroot}/usr/share/pixmaps/dev.lapce.lapce.png
+install -Dm644 extra/images/logo.svg %{buildroot}/usr/share/icons/hicolor/scalable/apps/moonwitness-ide.svg
 
 %files
 %license LICENSE*
@@ -33,7 +33,7 @@ install -Dm644 extra/images/logo.png %{buildroot}/usr/share/pixmaps/dev.lapce.la
 %{_bindir}/lapce
 /usr/share/applications/dev.lapce.lapce.desktop
 /usr/share/metainfo/dev.lapce.lapce.metainfo.xml
-/usr/share/pixmaps/dev.lapce.lapce.png
+/usr/share/icons/hicolor/scalable/apps/moonwitness-ide.svg
 
 %changelog
 * Mon Jan 01 2024 Jakub Panek
