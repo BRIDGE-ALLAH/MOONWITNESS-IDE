@@ -1,5 +1,11 @@
-# MOONWITNESS IDE
-### The Engineering Observatory
+<p align="center">
+  <img src="extra/images/logo_app.svg" width="144" alt="MOONWITNESS IDE symbol"/>
+</p>
+
+<h1 align="center">MOONWITNESS IDE</h1>
+<h3 align="center">The Engineering Observatory</h3>
+
+<p align="center"><strong>Understand the system. Trace the evidence. Build with intention.</strong></p>
 
 **Understand the system. Trace the evidence. Build with intention.**
 
@@ -8,6 +14,8 @@ MOONWITNESS IDE is an open-source development environment being shaped around a 
 The project aims to evolve a fast, native code editor into an **evidence-driven engineering workspace**—a place where developers can explore a repository, understand its architecture, make changes deliberately, verify outcomes, and preserve the reasoning behind their work.
 
 > **The Moon Watches. The Record Remembers. The Evidence Remains Inspectable.**
+
+**Brand system:** [BRAND.md](BRAND.md) · **Product blueprint:** [BLUEPRINT.md](BLUEPRINT.md)
 
 ## What MOONWITNESS IDE is
 
