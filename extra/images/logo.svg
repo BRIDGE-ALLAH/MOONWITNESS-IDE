@@ -1,8 +1,22 @@
-<svg version="1.1" id="svg2" width="2880" height="2880" viewBox="0 0 2880 2880" xmlns="http://www.w3.org/2000/svg">
-  <defs id="defs6"></defs>
-  <g id="g10" transform="matrix(4.511777, 0, 0, -4.511777, -3433.283203, 6312.723633)" style="filter: none;">
-    <g id="g12" transform="scale(0.1)">
-      <path d="m 8680.16,13575.4 -567.42,327.6 c 0,-2068.7 -0.01,-4137.33 -0.01,-6205.98 551.01,318.11 1102.02,636.24 1653.02,954.37 V 9306.6 L 8680.16,8679.83 c 0,1631.87 0.02,3263.67 0,4895.57 z M 9768.37,9981 v 2310.9 c 861.33,-497.3 1722.73,-994.6 2584.03,-1491.9 -672.2,-388.1 -1344.4,-776.2 -2016.6,-1164.29 V 8980.5 c 861.3,497.3 1722.7,994.6 2584,1491.9 l 567.5,327.6 -567.5,327.6 c -1050.5,606.5 -2100.9,1213 -3151.43,1819.5 l -2.62,1.5 -567.43,327.6 c 0,-1208.1 0.01,-2416.2 0.01,-3624.32 z m 1447.33,835.6 -879.9,508.1 v -1016.1 z" style="fill:#1a1a1a;fill-opacity:1;fill-rule:evenodd;stroke:none" id="path14"></path>
-    </g>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="moon" x1="120" y1="90" x2="360" y2="410" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F6D99A"/><stop offset="1" stop-color="#D9A95B"/>
+    </linearGradient>
+    <linearGradient id="orbit" x1="64" y1="128" x2="448" y2="390" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#66E0DF"/><stop offset=".55" stop-color="#7B91F5"/><stop offset="1" stop-color="#66E0DF"/>
+    </linearGradient>
+    <mask id="crescent">
+      <rect width="512" height="512" fill="black"/>
+      <circle cx="220" cy="250" r="150" fill="white"/>
+      <circle cx="300" cy="190" r="132" fill="black"/>
+    </mask>
+  </defs>
+  <path d="M66 282C91 154 204 79 315 99c84 15 137 72 143 143 9 109-126 187-261 179-69-4-116-43-131-90" fill="none" stroke="url(#orbit)" stroke-width="13" stroke-linecap="round"/>
+  <circle cx="220" cy="250" r="150" fill="url(#moon)" mask="url(#crescent)"/>
+  <path d="M256 321v86" stroke="#F6D99A" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="256" cy="419" r="17" fill="#66E0DF"/>
+  <circle cx="433" cy="239" r="13" fill="#66E0DF"/>
+  <circle cx="93" cy="348" r="10" fill="#7B91F5"/>
+  <path d="M122 105l8 21 21 8-21 8-8 21-8-21-21-8 21-8z" fill="#F6D99A"/>
 </svg>
