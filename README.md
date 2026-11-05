@@ -1,55 +1,181 @@
-<h1 align="center">
-  <a href="https://lapce.dev" target="_blank">
-  <img src="extra/images/logo.png" width=200 height=200/><br>
-  Lapce
-  </a>
-</h1>
+# MOONWITNESS IDE
+### The Engineering Observatory
 
-<h4 align="center">Lightning-fast And Powerful Code Editor</h4>
+**Understand the system. Trace the evidence. Build with intention.**
 
-<div align="center">
-  <a href="https://github.com/lapce/lapce/actions/workflows/ci.yml" target="_blank">
-    <img src="https://github.com/lapce/lapce/actions/workflows/ci.yml/badge.svg" />
-  </a>
-  <a href="https://discord.gg/n8tGJ6Rn6D" target="_blank">
-    <img src="https://img.shields.io/discord/946858761413328946?logo=discord" />
-  </a>
-  <a href="https://docs.lapce.dev" target="_blank">
-      <img src="https://img.shields.io/static/v1?label=Docs&message=docs.lapce.dev&color=blue" alt="Lapce Docs">
-  </a>
-</div>
-<br/>
+MOONWITNESS IDE is an open-source development environment being shaped around a simple belief: software engineering should produce more than working code. It should also produce understanding, traceable decisions, verifiable results, and knowledge that survives beyond a single developer or session.
 
+The project aims to evolve a fast, native code editor into an **evidence-driven engineering workspace**—a place where developers can explore a repository, understand its architecture, make changes deliberately, verify outcomes, and preserve the reasoning behind their work.
 
-Lapce (IPA: /læps/) is written in pure Rust, with a UI in [Floem](https://github.com/lapce/floem). It is designed with [Rope Science](https://xi-editor.io/docs/rope_science_00.html) from the [Xi-Editor](https://github.com/xi-editor/xi-editor), enabling lightning-fast computation, and leverages [wgpu](https://github.com/gfx-rs/wgpu) for rendering. More information about the features of Lapce can be found on the [main website](https://lapce.dev) and user documentation can be found on [GitBook](https://docs.lapce.dev/).
+> **The Moon Watches. The Record Remembers. The Evidence Remains Inspectable.**
 
-![](https://github.com/lapce/lapce/blob/master/extra/images/screenshot.png?raw=true)
+## What MOONWITNESS IDE is
 
-## Features
+MOONWITNESS IDE is the developer-facing engineering environment in the wider MOONWITNESS XV vision. It is intended to connect five parts of disciplined software work:
 
-* Built-in LSP ([Language Server Protocol](https://microsoft.github.io/language-server-protocol/)) support to give you intelligent code features such as: completion, diagnostics and code actions
-* Modal editing support as first class citizen (Vim-like, and toggleable)
-* Built-in remote development support inspired by [VSCode Remote Development](https://code.visualstudio.com/docs/remote/remote-overview). Enjoy the benefits of a "local" experience, and seamlessly gain the full power of a remote system. We also have [Lapdev](https://lap.dev/) which can help manage your remote dev environments. 
-* Plugins can be written in programming languages that can compile to the [WASI](https://wasi.dev/) format (C, Rust, [AssemblyScript](https://www.assemblyscript.org/))
-* Built-in terminal, so you can execute commands in your workspace, without leaving Lapce.
+1. **Workspace** — a responsive environment for editing, navigating, and operating on code.
+2. **Understanding** — tools that help developers build a reliable mental model of a repository and its architecture.
+3. **Evidence** — visible links between changes, tests, diagnostics, decisions, and the source material that supports them.
+4. **Continuity** — durable project knowledge so important context does not disappear between contributors or work sessions.
+5. **Human direction** — automation and AI that assist within explicit boundaries, while people retain authority and responsibility.
 
-## Installation
+This is an evolving product direction, not a claim that every capability described here is already implemented.
 
-You can find pre-built releases for Windows, Linux and macOS [here](https://github.com/lapce/lapce/releases), or [installing with a package manager](docs/installing-with-package-manager.md).
-If you'd like to compile from source, you can find the [guide](docs/building-from-source.md).
+## Why an Engineering Observatory?
+
+Modern code editors are excellent at helping developers type and navigate code. Complex projects need more: a way to see how components relate, understand why decisions were made, distinguish verified behavior from assumptions, and carry context forward.
+
+MOONWITNESS IDE uses the observatory metaphor deliberately:
+
+- **Observe before changing.** Inspect the repository and its behavior before proposing modifications.
+- **Trace before trusting.** Connect claims to source files, tests, logs, or other inspectable evidence.
+- **Verify before declaring.** A proposed change is not a verified result.
+- **Preserve what matters.** Keep useful decisions, constraints, and project knowledge accessible.
+- **Keep humans responsible.** AI may assist; it does not become the authority.
+
+The goal is not to replace developer judgment. It is to give that judgment a clearer workspace.
+
+## Current technical foundation
+
+MOONWITNESS IDE is currently based on the open-source [Lapce](https://github.com/lapce/lapce) codebase. The upstream foundation provides a native Rust application and an existing editor architecture.
+
+The inherited capabilities documented by the upstream project include:
+
+- Rust application foundation and a UI built with [Floem](https://github.com/lapce/floem).
+- GPU-accelerated rendering through [wgpu](https://github.com/gfx-rs/wgpu).
+- Rope-based text editing technology.
+- Language Server Protocol (LSP) integration for completion, diagnostics, and code actions.
+- Modal, Vim-like editing.
+- Integrated terminal.
+- Remote development support.
+- WASI-oriented plugin support.
+
+These are capabilities of the inherited Lapce foundation. Their exact status, compatibility, and presentation in this fork must be validated against the current branch and build. See the upstream [Lapce project](https://github.com/lapce/lapce) for its original documentation.
+
+## Product principles
+
+### Evidence over assumption
+Every important engineering claim should be traceable to something inspectable: code, a test result, a diagnostic, a log, a specification, or an explicitly identified source.
+
+### Understanding before automation
+Automation should operate with repository context and clearly stated constraints. It should not conceal uncertainty or silently make high-impact decisions.
+
+### Human authority by design
+Developers decide what to accept, modify, execute, publish, and release. AI-generated suggestions remain proposals until reviewed and accepted.
+
+### Preserve the original
+Keep source material, project history, and the distinction between original content and derived interpretation. Do not rewrite project history to make a narrative look cleaner.
+
+### Clarity over spectacle
+Prefer understandable workflows, inspectable state, and useful feedback over impressive but opaque automation.
+
+### Incremental trust
+Trust is earned through reproducible behavior, tests, review, and transparent limitations—not through branding or claims.
+
+## Relationship to MOONWITNESS XV
+
+MOONWITNESS IDE belongs to the broader MOONWITNESS XV ecosystem, but it has a specific responsibility: **the engineering workspace**.
+
+| Project / layer | Intended responsibility |
+|---|---|
+| MOONWITNESS XV | The overarching ecosystem and shared vision |
+| MOONWITNESS IDE | Developer workspace for building, inspecting, and verifying software |
+| ARSY | The ecosystem's central backend hub, according to the wider architecture |
+| LUMEN | A planned AI framework / worker capability operating through defined contracts |
+| HEADQUARTERS / 100CENTER | Human governance, coordination, and oversight |
+| ORBIT | A planned spatial or immersive interface |
+
+These boundaries matter. MOONWITNESS IDE is not a replacement for ARSY, a governance authority, or an autonomous source of truth. Any future integration should use explicit interfaces and documented contracts. Planned ecosystem components must not be presented as active integrations until implemented and verified.
+
+## Product direction
+
+The following capabilities describe the intended evolution of the IDE. They are **roadmap directions**, not assertions that they are currently available.
+
+### Repository intelligence
+Help developers map project structure, identify important modules, follow dependencies, and navigate relationships across a codebase.
+
+### Architecture awareness
+Make architectural boundaries, interfaces, decisions, and constraints easier to inspect and maintain.
+
+### Evidence-linked development
+Connect proposed changes to relevant files, tests, diagnostics, design notes, and verification results.
+
+### AI-assisted engineering
+Offer context-aware explanations, implementation proposals, test suggestions, and review assistance. Keep generated output reviewable and under developer control.
+
+### Project memory and continuity
+Preserve approved project knowledge—such as decisions, constraints, and operational notes—with provenance and clear ownership.
+
+### Responsible automation
+Support explicit, bounded actions with visible scope, meaningful confirmation points, and inspectable outcomes.
+
+## A disciplined engineering workflow
+
+1. **Observe** — inspect the workspace and identify the task.
+2. **Understand** — gather relevant code, architecture, history, and constraints.
+3. **Design** — state the intended change and its expected impact.
+4. **Build** — implement the smallest coherent change.
+5. **Test** — run relevant automated and manual checks.
+6. **Verify** — inspect the actual results and record what they prove.
+7. **Preserve** — document decisions and durable knowledge.
+8. **Improve** — use findings to refine the system.
+
+A successful build is not automatically a successful test. A passing test is not proof of deployment. A deployment is not automatically an accepted release.
+
+## Verification language
+
+MOONWITNESS IDE adopts explicit evidence states to prevent overclaiming:
+
+| State | Meaning |
+|---|---|
+| **CI_VERIFIED** | Relevant CI checks passed for the identified revision |
+| **BUILD_VERIFIED** | A build completed successfully for the identified revision and environment |
+| **DEPLOYMENT_READY** | Required deployment prerequisites were checked; deployment has not necessarily happened |
+| **DEPLOYED_VERIFIED** | The deployed instance was inspected and verified against the identified revision |
+| **RELEASE_ACCEPTED** | The release passed its defined acceptance process |
+
+These states are not interchangeable. Every status should identify its revision, scope, environment, and supporting evidence where applicable.
+
+## Roadmap
+
+The roadmap is intentionally incremental. Priorities may change as implementation and validation reveal what is most valuable.
+
+- **Foundation** — establish project identity, document the upstream relationship, keep the editor buildable, and maintain clear contribution and licensing practices.
+- **Product coherence** — align application naming, interface language, settings, documentation, and release identity without destabilizing the inherited editor.
+- **Repository understanding** — prototype useful repository maps and architecture navigation, then validate accuracy and performance.
+- **Evidence workflows** — connect changes to tests, diagnostics, and reviewable verification records.
+- **AI assistance** — introduce bounded, opt-in assistance with transparent context, permissions, and human approval.
+- **Knowledge continuity** — design durable, provenance-aware project notes and decision records.
+- **MOONWITNESS XV integration** — integrate only through documented, versioned contracts after the relevant services and interfaces are ready.
+- **Hardening and release** — security review, performance work, platform validation, reproducible builds, and release acceptance.
+
+## Project status and transparency
+
+MOONWITNESS IDE is an evolving fork and product direction. The repository currently retains significant Lapce implementation and naming conventions. This documentation describes the intended identity and roadmap; it does not imply that a full rebrand, new AI system, ecosystem integration, or every roadmap capability has shipped.
+
+When reporting progress, identify the exact commit or revision, what changed, which checks were run, the environment and results, and what remains unverified.
+
+Do not describe a feature as implemented, integrated, deployed, or release-ready without evidence for that specific claim.
 
 ## Contributing
 
-Guidelines for contributing to Lapce can be found in [`CONTRIBUTING.md`](CONTRIBUTING.md).
+Contributions should improve the editor while preserving clarity about upstream origins, licensing, and the state of implementation.
 
-## Feedback & Contact
+Before proposing a substantial change:
+1. Explain the problem and intended user benefit.
+2. Identify affected components and architectural boundaries.
+3. Describe risks and compatibility considerations.
+4. Include tests or a verification plan.
+5. Document new assumptions or long-term decisions.
 
-The most popular place for Lapce developers and users is on the [Discord server](https://discord.gg/n8tGJ6Rn6D).
+Please review the repository's existing contribution guidance and license before contributing. MOONWITNESS IDE is based on Lapce; retain required upstream notices and comply with applicable license terms.
 
-Or, join the discussion on [Reddit](https://www.reddit.com/r/lapce/) where we are just getting started.
+## The mission
 
-There is also a [Matrix Space](https://matrix.to/#/#lapce-editor:matrix.org), which is linked to the content from the Discord server.
+Build an engineering environment where developers can move quickly without losing the ability to understand what they are doing, why they are doing it, and how they know it works.
 
-## License
+**Observe clearly. Trace honestly. Build deliberately. Verify openly. Preserve knowledge.**
 
-Lapce is released under the Apache License Version 2, which is an open source license. You may contribute to this project, or use the code as you please as long as you adhere to its conditions. You can find a copy of the license text here: [`LICENSE`](LICENSE).
+---
+
+*MOONWITNESS IDE — The Engineering Observatory.*
