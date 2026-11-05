@@ -115,11 +115,11 @@ mod grammars;
 mod logging;
 
 #[derive(Parser)]
-#[clap(name = "Lapce")]
+#[clap(name = "MOONWITNESS IDE")]
 #[clap(version=meta::VERSION)]
 #[derive(Debug)]
 struct Cli {
-    /// Launch new window even if Lapce is already running
+    /// Launch a new MOONWITNESS IDE window even if one is already running
     #[clap(short, long, action)]
     new: bool,
     /// Don't return instantly when opened in a terminal
@@ -206,7 +206,7 @@ impl AppData {
     fn default_window_config(&self) -> WindowConfig {
         WindowConfig::default()
             .apply_default_theme(false)
-            .title("Lapce")
+            .title("MOONWITNESS IDE")
     }
 
     pub fn new_window(&self, folder: Option<PathBuf>) {
