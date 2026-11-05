@@ -159,7 +159,7 @@ The roadmap is intentionally incremental. Priorities may change as implementatio
 
 ## Project status and transparency
 
-MOONWITNESS IDE is an evolving fork and product direction. The repository currently retains significant Lapce implementation and naming conventions. This documentation describes the intended identity and roadmap; it does not imply that a full rebrand, new AI system, ecosystem integration, or every roadmap capability has shipped.
+MOONWITNESS IDE is an evolving fork. Its product identity is now reflected in the documentation, application-facing labels, brand artwork, default color themes, and platform package display metadata. Some compatibility identifiers—including internal crate and binary names, bundle paths, and desktop IDs—retain Lapce naming. This branding work does not imply that a new AI system, MOONWITNESS XV service integration, or every roadmap capability has shipped.
 
 When reporting progress, identify the exact commit or revision, what changed, which checks were run, the environment and results, and what remains unverified.
 
