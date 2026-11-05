@@ -17,6 +17,9 @@ The symbol is not a claim of omniscience. It stands for disciplined observation 
 - `extra/images/logo_app.svg` — dark application tile.
 - `extra/images/logo_app_light.svg` — light application tile.
 - `icons/lapce/lapce_logo.svg` — editor UI logo asset retained at its upstream-compatible path.
+- `extra/images/logo.png` — raster logo used by compatible tooling.
+- `extra/windows/lapce.ico` — Windows installer icon; filename retained for build compatibility.
+- `extra/macos/Lapce.app/Contents/Resources/lapce.icns` — macOS application icon; filename and bundle path retained for compatibility.
 
 Use SVG assets where supported. Do not stretch, recolor arbitrarily, add effects, or place the mark on low-contrast backgrounds. Keep clear space around the mark approximately equal to the diameter of its small orbit node. For very small sizes, prioritize the crescent and orbit; omit decorative details if a simplified mark is prepared.
 
