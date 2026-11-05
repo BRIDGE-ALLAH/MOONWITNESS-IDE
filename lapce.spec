@@ -11,8 +11,7 @@ Source:        	{{{ git_dir_pack }}}
 BuildRequires:  cargo libxkbcommon-x11-devel libxcb-devel vulkan-loader-devel wayland-devel openssl-devel pkgconf libxkbcommon-x11-devel
 
 %description
-Lapce is written in pure Rust, with a UI in Floem (also written in Rust).
-It is designed with Rope Science from the Xi-Editor, enabling lightning-fast computation, and leverages wgpu for rendering.
+MOONWITNESS IDE is an evolving, Lapce-based engineering workspace. Its current native editor foundation uses Rust, Floem, rope-based editing, and wgpu rendering.
 
 %prep
 {{{ git_dir_setup_macro }}}
