@@ -16,7 +16,7 @@ The project aims to evolve a fast, native code editor into an **evidence-driven 
 
 > **The Moon Watches. The Record Remembers. The Evidence Remains Inspectable.**
 
-**Brand system:** [BRAND.md](BRAND.md) · **Product blueprint:** [BLUEPRINT.md](BLUEPRINT.md) · **Build guide:** [docs/building-from-source.md](docs/building-from-source.md) · **Security policy:** [SECURITY.md](SECURITY.md)
+**Brand system:** [BRAND.md](BRAND.md) · **Product blueprint:** [BLUEPRINT.md](BLUEPRINT.md) · **Build guide:** [docs/building-from-source.md](docs/building-from-source.md) · **Security policy:** [SECURITY.md](SECURITY.md) · **Release checklist:** [docs/RELEASE_READINESS.md](docs/RELEASE_READINESS.md)
 
 ## What MOONWITNESS IDE is
 
@@ -157,6 +157,12 @@ The roadmap is intentionally incremental. Priorities may change as implementatio
 - **Knowledge continuity** — design durable, provenance-aware project notes and decision records.
 - **MOONWITNESS XV integration** — integrate only through documented, versioned contracts after the relevant services and interfaces are ready.
 - **Hardening and release** — security review, performance work, platform validation, reproducible builds, and release acceptance.
+
+## Build and verification
+
+The GitHub Actions workflow is configured to check formatting and spelling, run Clippy, build on Linux, macOS, and Windows, and run workspace documentation tests. These are automated checks, not a blanket release certification. The result for a particular revision is shown by the CI badge above and must be inspected before describing that revision as verified.
+
+See [Building from source](docs/building-from-source.md) for local setup and commands. Report the exact commit, platform, commands, and outcomes when sharing verification results.
 
 ## Project status and transparency
 
