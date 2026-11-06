@@ -144,3 +144,7 @@ opt-level = 3
 
 [profile.fastdev]
 inherits = "dev"
+
+# Dedicated profile used by the cross-platform GitHub Actions workflow.
+[profile.ci]
+inherits = "dev"
