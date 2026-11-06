@@ -1,11 +1,8 @@
 blank_issues_enabled: false
 contact_links:
-  - name: Lapce community on Discord
-    url: https://discord.gg/n8tGJ6Rn6D
-    about: Please ask and answer questions here.
-  - name: Lapce community on Matrix
-    url: https://matrix.to/#/#lapce-editor:matrix.org
-    about: Please ask and answer questions here.
-  - name: Lapce documentation
-    url: https://docs.lapce.dev/
-    about: Documentation for Lapce
+  - name: Contribution guidelines
+    url: https://github.com/BRIDGE-ALLAH/MOONWITNESS-IDE/blob/master/CONTRIBUTING.md
+    about: Read project scope, contribution expectations, and compatibility guidance.
+  - name: Security policy
+    url: https://github.com/BRIDGE-ALLAH/MOONWITNESS-IDE/blob/master/SECURITY.md
+    about: Read how to report a security vulnerability privately.
