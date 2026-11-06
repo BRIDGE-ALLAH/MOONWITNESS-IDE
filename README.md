@@ -16,7 +16,7 @@ The project aims to evolve a fast, native code editor into an **evidence-driven 
 
 > **The Moon Watches. The Record Remembers. The Evidence Remains Inspectable.**
 
-**Brand system:** [BRAND.md](BRAND.md) · **Product blueprint:** [BLUEPRINT.md](BLUEPRINT.md) · **Build guide:** [docs/building-from-source.md](docs/building-from-source.md) · **Security policy:** [SECURITY.md](SECURITY.md)
+**Brand system:** [BRAND.md](BRAND.md) · **Product blueprint:** [BLUEPRINT.md](BLUEPRINT.md) · **Build guide:** [docs/building-from-source.md](docs/building-from-source.md) · **Security policy:** [SECURITY.md](SECURITY.md) · **Release checklist:** [docs/RELEASE_READINESS.md](docs/RELEASE_READINESS.md)
 
 ## What MOONWITNESS IDE is
 
