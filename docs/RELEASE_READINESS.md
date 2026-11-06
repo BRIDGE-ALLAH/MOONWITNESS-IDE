@@ -10,7 +10,7 @@ This checklist defines the evidence required before calling a revision release-r
 - [x] Contribution, pull request, issue-form, and security-reporting guidance added.
 - [ ] GitHub repository description and homepage updated to MOONWITNESS IDE.
 - [ ] Relevant repository topics added.
-- [ ] Issues feature enabled so issue forms and the documented issue workflow are usable.
+- [x] Issues feature enabled so issue forms and the documented issue workflow are usable.
 - [ ] Default branch reviewed and intentionally selected.
 
 ## 2. Source and build verification
@@ -66,9 +66,9 @@ Snapshot recorded on 2026-11-06 for repository [BRIDGE-ALLAH/MW-IDE](https://git
 - The public repository name is `MW-IDE`; the product identity remains **MOONWITNESS IDE — The Engineering Observatory**.
 - The primary README, About dialog project link, Cargo homepage metadata, Linux AppStream URLs, build guide, and contributor guidance point to the renamed repository.
 - The dark/light application tiles, primary symbol, and default Observatory themes are present in the repository. The About dialog displays the product name and descriptor.
-- CI run [#11](https://github.com/BRIDGE-ALLAH/MW-IDE/actions/runs/42136934858) is attached to current `main` head `0779219bfe00eaa092eb65a37dba71b302fb72c2`. At the latest inspection it was **queued**, with formatting/spellchecking and Linux, Windows, and macOS Clippy jobs waiting. No passing result is claimed.
+- CI run [#12](https://github.com/BRIDGE-ALLAH/MW-IDE/actions/runs/42137421399) is attached to current `main` head `6887697720a4e575feb7065ef97cdd25f675d478`. At the latest inspection it was **queued**. The preceding runs were cancelled when newer commits were pushed; no passing result is claimed.
 - GitHub still designates `master` as the default branch. `main` remains the requested development branch.
-- Repository description is still the inherited generic text (“Lightning-fast and Powerful Code Editor written in Rust”); homepage and topics have not been verified as updated, and Issues remains disabled. The connected GitHub operations available here expose repository reads and source commits, but no repository-settings write action. The maintainer must update Description, Homepage, Topics, Issues, and the default branch in GitHub Settings.
+- Repository settings are partially outstanding: description is still the inherited generic text (“Lightning-fast and Powerful Code Editor written in Rust”), homepage still points to `https://lap.dev/lapce/`, and topics are empty. Issues is enabled. The connected GitHub operations available here expose repository reads and source commits, but no repository-settings write action. The maintainer must update Description, Homepage, Topics, and the default branch in GitHub Settings.
 - No successful cross-platform build, installer test, signing/notarization test, or release acceptance has been verified in this session.
 - MOONWITNESS XV, ARSY, LUMEN, and other ecosystem integrations remain architecture/roadmap context unless separately implemented and verified.
 
