@@ -7,7 +7,7 @@
 
 <p align="center"><strong>Understand the system. Trace the evidence. Build with intention.</strong></p>
 
-<p align="center"><a href="https://github.com/BRIDGE-ALLAH/MOONWITNESS-IDE/actions/workflows/ci.yml"><img src="https://github.com/BRIDGE-ALLAH/MOONWITNESS-IDE/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI status"/></a></p>
+<p align="center"><a href="https://github.com/BRIDGE-ALLAH/MW-IDE/actions/workflows/ci.yml"><img src="https://github.com/BRIDGE-ALLAH/MW-IDE/actions/workflows/ci.yml/badge.svg?branch=main" alt="CI status"/></a></p>
 
 
 MOONWITNESS IDE is an open-source development environment being shaped around a simple belief: software engineering should produce more than working code. It should also produce understanding, traceable decisions, verifiable results, and knowledge that survives beyond a single developer or session.
