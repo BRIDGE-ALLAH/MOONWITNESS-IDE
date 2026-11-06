@@ -17,7 +17,7 @@ This checklist defines the evidence required before calling a revision release-r
 
 - [x] CI workflow defines formatting, spelling, Clippy, cross-platform build, and documentation-test jobs.
 - [x] A dedicated Cargo `ci` profile exists for the workflow.
-- [ ] GitHub Actions is enabled and a workflow run is visible for the candidate commit.
+- [x] GitHub Actions is enabled and a workflow run is visible for the current candidate commit (queued; completion not yet verified).
 - [ ] A MOONWITNESS-specific release workflow has been rebuilt and audited; the inherited Lapce release workflow is intentionally disabled.
 - [ ] Formatting and spellcheck pass.
 - [ ] Clippy passes on all configured platforms.
@@ -66,9 +66,9 @@ Snapshot recorded on 2026-11-06 for repository [BRIDGE-ALLAH/MW-IDE](https://git
 - The public repository name is `MW-IDE`; the product identity remains **MOONWITNESS IDE — The Engineering Observatory**.
 - The primary README, About dialog project link, Cargo homepage metadata, Linux AppStream URLs, build guide, and contributor guidance point to the renamed repository.
 - The dark/light application tiles, primary symbol, and default Observatory themes are present in the repository. The About dialog displays the product name and descriptor.
-- CI run [#42136835734](https://github.com/BRIDGE-ALLAH/MW-IDE/actions/runs/42136835734) was queued for branding commit `50c9c4d31162c4c31ba02f057d789f28dc0c8fae` when this snapshot was prepared. No passing result is claimed; this evidence document update also requires its own CI run.
+- CI run [#11](https://github.com/BRIDGE-ALLAH/MW-IDE/actions/runs/42136934858) is attached to current `main` head `0779219bfe00eaa092eb65a37dba71b302fb72c2`. At the latest inspection it was **queued**, with formatting/spellchecking and Linux, Windows, and macOS Clippy jobs waiting. No passing result is claimed.
 - GitHub still designates `master` as the default branch. `main` remains the requested development branch.
-- Repository description and homepage settings still need maintainer-level update; Issues remains disabled and topics are empty. The connected GitHub operations available here can commit files but do not expose repository-settings writes.
+- Repository description is still the inherited generic text (“Lightning-fast and Powerful Code Editor written in Rust”); homepage and topics have not been verified as updated, and Issues remains disabled. The connected GitHub operations available here expose repository reads and source commits, but no repository-settings write action. The maintainer must update Description, Homepage, Topics, Issues, and the default branch in GitHub Settings.
 - No successful cross-platform build, installer test, signing/notarization test, or release acceptance has been verified in this session.
 - MOONWITNESS XV, ARSY, LUMEN, and other ecosystem integrations remain architecture/roadmap context unless separately implemented and verified.
 
