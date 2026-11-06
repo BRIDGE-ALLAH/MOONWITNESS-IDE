@@ -1,6 +1,13 @@
 # Changelog
 
-## Unreleased
+> Historical entries below are inherited from the Lapce upstream snapshot and are preserved for attribution and context. They are not a record of MOONWITNESS IDE releases. No public MOONWITNESS IDE release has been accepted yet; project-specific changes should be described in future entries with their exact revision and verification evidence.
+
+## MOONWITNESS IDE releases
+
+No public release has been published yet.
+
+## Inherited upstream Unreleased (Lapce snapshot)
+
 
 ### Features/Changes
 - Added document highlight for LSPs which support this feature
