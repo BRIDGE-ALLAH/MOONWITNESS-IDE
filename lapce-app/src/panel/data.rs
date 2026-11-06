@@ -154,11 +154,11 @@ impl PanelData {
         );
         let styles = cx.create_rw_signal(styles);
         let size = cx.create_rw_signal(PanelSize {
-            left: 250.0,
+            left: 300.0,
             left_split: 0.5,
             bottom: 300.0,
             bottom_split: 0.5,
-            right: 250.0,
+            right: 280.0,
             right_split: 0.5,
         });
         let sections = cx.create_rw_signal(

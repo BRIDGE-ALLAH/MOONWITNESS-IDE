@@ -639,13 +639,20 @@ fn panel_picker(
         },
     )
     .style(move |s| {
-        s.border_color(config.get().color(LapceColor::LAPCE_BORDER))
+        let config = config.get();
+        s.border_color(config.color(LapceColor::LAPCE_BORDER))
             .apply_if(
                 panels.with(|p| {
                     p.get(&position).map(|p| p.is_empty()).unwrap_or(true)
                 }),
                 |s| s.hide(),
             )
+            // The vertical panel picker is the persistent MOONWITNESS command rail.
+            // Keep it compact and visually distinct from the project/content panels.
+            .apply_if(!is_bottom, |s| {
+                s.width(54.0)
+                    .background(config.color(LapceColor::ACTIVITY_BACKGROUND))
+            })
             .apply_if(is_bottom, |s| s.flex_col())
             .apply_if(is_bottom && is_first, |s| s.border_right(1.0))
             .apply_if(is_bottom && !is_first, |s| s.border_left(1.0))
