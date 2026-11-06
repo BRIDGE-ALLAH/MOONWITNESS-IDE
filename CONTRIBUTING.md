@@ -44,7 +44,7 @@ MOONWITNESS IDE is based on [Lapce](https://github.com/lapce/lapce). Preserve up
 
 ## Questions and discussion
 
-For questions, feature proposals, or bug reports, use the [MOONWITNESS IDE issue tracker](https://github.com/BRIDGE-ALLAH/MOONWITNESS-IDE/issues). Please do not assume upstream Lapce community channels are MOONWITNESS IDE support channels.
+For questions, feature proposals, or bug reports, use the repository's Issues tab once the maintainer enables Issues. Until then, use a focused pull request for proposed documentation changes or contact the maintainer through the GitHub profile linked from this repository. Please do not assume upstream Lapce community channels are MOONWITNESS IDE support channels.
 
 ---
 
