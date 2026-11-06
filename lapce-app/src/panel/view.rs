@@ -524,11 +524,22 @@ pub fn panel_header(
     header: String,
     config: ReadSignal<Arc<LapceConfig>>,
 ) -> impl View {
-    container(label(move || header.clone())).style(move |s| {
-        s.padding_horiz(10.0)
-            .padding_vert(6.0)
+    container(
+        label(move || header.clone()).style(move |s| {
+            let config = config.get();
+            s.font_size(11.0)
+                .color(config.color(LapceColor::LAPCE_ICON_ACTIVE))
+                .selectable(false)
+        }),
+    )
+    .style(move |s| {
+        let config = config.get();
+        s.padding_horiz(12.0)
+            .padding_vert(8.0)
             .width_pct(100.0)
-            .background(config.get().color(LapceColor::EDITOR_BACKGROUND))
+            .background(config.color(LapceColor::ACTIVITY_BACKGROUND))
+            .border_bottom(1.0)
+            .border_color(config.color(LapceColor::LAPCE_BORDER))
     })
 }
 
