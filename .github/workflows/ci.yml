@@ -5,11 +5,6 @@ on:
       - main
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
-    paths:
-      - Cargo.toml
-      - Cargo.lock
-      - lapce-**
-      - .github/workflows/ci.yml
   workflow_dispatch:
 
 name: CI
@@ -58,7 +53,7 @@ jobs:
 
       - uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f
         with:
-          name: lapce-${{ matrix.os }}
+          name: moonwitness-ide-${{ matrix.os }}
           path: |
             target/ci/lapce*
           retention-days: 1
