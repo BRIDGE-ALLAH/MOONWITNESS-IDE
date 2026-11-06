@@ -2031,20 +2031,23 @@ fn split_list(
 }
 
 fn main_split(window_tab_data: Rc<WindowTabData>) -> impl View {
-    let root_split = window_tab_data.main_split.root_split;
+    let root_split_id = window_tab_data.main_split.root_split;
     let root_split = window_tab_data
         .main_split
         .splits
         .get_untracked()
-        .get(&root_split)
+        .get(&root_split_id)
         .unwrap()
         .read_only();
     let config = window_tab_data.main_split.common.config;
     let panel = window_tab_data.panel.clone();
     let plugin = window_tab_data.plugin.clone();
+    let workbench_command = window_tab_data.common.workbench_command;
+    let is_empty = move || root_split.with(|split| split.children.is_empty());
     let dragging: RwSignal<Option<(RwSignal<usize>, EditorTabId)>> =
         create_rw_signal(None);
-    split_list(
+
+    let editor_surface = split_list(
         root_split,
         window_tab_data.clone(),
         plugin.clone(),
@@ -2060,8 +2063,103 @@ fn main_split(window_tab_data: Rc<WindowTabData>) -> impl View {
             .width_full()
             .flex_grow(1.0f32)
             .flex_basis(0.0)
+    });
+
+    let open_folder_command = workbench_command;
+    let choose_workspace_command = workbench_command;
+    let observatory = container(
+        stack((
+            label(|| "MOONWITNESS XV  /  ENGINEERING OBSERVATORY".to_string())
+                .style(move |s| {
+                    let config = config.get();
+                    s.font_size(10.0)
+                        .letter_spacing(1.4)
+                        .color(config.color(LapceColor::EDITOR_FOCUS))
+                        .selectable(false)
+                }),
+            label(|| "Observe the chaos.".to_string()).style(move |s| {
+                let config = config.get();
+                s.margin_top(22.0)
+                    .font_size(34.0)
+                    .color(config.color(LapceColor::EDITOR_FOREGROUND))
+                    .selectable(false)
+            }),
+            label(|| "Decode the system. Engineer the future.".to_string())
+                .style(move |s| {
+                    let config = config.get();
+                    s.margin_top(6.0)
+                        .font_size(15.0)
+                        .color(config.color(LapceColor::EDITOR_DIM))
+                        .selectable(false)
+                }),
+            stack((
+                container(label(|| "OPEN PROJECT".to_string()))
+                    .on_click_stop(move |_| {
+                        open_folder_command.send(
+                            LapceWorkbenchCommand::OpenFolder,
+                        );
+                    })
+                    .style(move |s| {
+                        let config = config.get();
+                        s.margin_top(28.0)
+                            .padding_horiz(18.0)
+                            .padding_vert(11.0)
+                            .background(config.color(LapceColor::EDITOR_FOCUS))
+                            .color(config.color(LapceColor::EDITOR_BACKGROUND))
+                            .border_radius(4.0)
+                            .cursor(CursorStyle::Pointer)
+                    }),
+                container(label(|| "RECENT WORKSPACES".to_string()))
+                    .on_click_stop(move |_| {
+                        choose_workspace_command.send(
+                            LapceWorkbenchCommand::PaletteWorkspace,
+                        );
+                    })
+                    .style(move |s| {
+                        let config = config.get();
+                        s.margin_left(10.0)
+                            .margin_top(28.0)
+                            .padding_horiz(18.0)
+                            .padding_vert(11.0)
+                            .border(1.0)
+                            .border_color(config.color(LapceColor::LAPCE_BORDER))
+                            .color(config.color(LapceColor::EDITOR_FOREGROUND))
+                            .border_radius(4.0)
+                            .cursor(CursorStyle::Pointer)
+                    }),
+            ))
+            .style(|s| s.flex_direction(FlexDirection::Row).items_center()),
+            label(|| "01  /  PROJECT SIGNAL     02  /  ENGINEERING DECK     03  /  SIGNAL CONSOLE".to_string())
+                .style(move |s| {
+                    let config = config.get();
+                    s.margin_top(42.0)
+                        .font_size(9.0)
+                        .color(config.color(LapceColor::EDITOR_DIM))
+                        .selectable(false)
+                }),
+        ))
+        .style(|s| {
+            s.flex_col()
+                .align_items(Some(AlignItems::Start))
+                .justify_content(Some(JustifyContent::Center))
+                .max_width(760.0)
+        }),
+    )
+    .style(move |s| {
+        let config = config.get();
+        s.position(Position::Absolute)
+            .size_full()
+            .padding(48.0)
+            .background(config.color(LapceColor::EDITOR_BACKGROUND))
+            .align_items(Some(AlignItems::Center))
+            .justify_content(Some(JustifyContent::Center))
+            .apply_if(!is_empty(), |s| s.display(Display::None))
     })
-    .debug_name("Main Split")
+    .debug_name("MOONWITNESS Observatory Empty State");
+
+    stack((editor_surface, observatory))
+        .style(|s| s.size_full())
+        .debug_name("Main Split")
 }
 
 pub fn not_clickable_icon<S: std::fmt::Display + 'static>(
