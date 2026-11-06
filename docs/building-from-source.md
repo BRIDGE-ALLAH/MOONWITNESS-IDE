@@ -14,7 +14,7 @@ Use a current stable Rust toolchain that satisfies the repository's declared min
 ## Get the source
 
 ```sh
-git clone https://github.com/BRIDGE-ALLAH/MOONWITNESS-IDE.git
+git clone https://github.com/BRIDGE-ALLAH/MW-IDE.git
 cd MOONWITNESS-IDE
 ```
 
