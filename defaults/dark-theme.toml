@@ -1,37 +1,37 @@
 #:schema ../extra/schemas/color-theme.json
 
 [color-theme]
-name = "MOONWITNESS Observatory Dark"
+name = "MOONWITNESS XV — RIOT OBSIDIAN"
 
 [ui]
 font-family = ""
 font-size = 13
-header-height = 35
-status-height = 25
-tab-min-width = 100
-activity-width = 50
+header-height = 38
+status-height = 26
+tab-min-width = 112
+activity-width = 54
 scroll-width = 10
 drop-shadow-width = 0
 
 [color-theme.base]
-black = "#0B1020"
-blue = "#7B91F5"
-cyan = "#66E0DF"
-green = "#8CCFAD"
-grey = "#34405D"
-magenta = "#B59AF2"
-orange = "#D9A95B"
-purple = "#A7AFFF"
-red = "#FF7B83"
-white = "#E8EEFA"
-yellow = "#F6D99A"
+black = "#111315"
+blue = "#8EA8E8"
+cyan = "#78B9B2"
+green = "#A9CF72"
+grey = "#363A3D"
+magenta = "#C18AAB"
+orange = "#E8A044"
+purple = "#A78BCB"
+red = "#D64B37"
+white = "#E8E1D3"
+yellow = "#E8B95F"
 
 primary-background = "$black"
-# Background for 'secondary' elements: panels, palette, status bar, completion, hover
-secondary-background = "#151E36"
-current-background = "#202A44"
+# Graphite panels and raised instrument surfaces
+secondary-background = "#1B1E20"
+current-background = "#282B2D"
 text = "$white"
-dim-text = "#78849D"
+dim-text = "#85817A"
 
 [color-theme.syntax]
 "comment" = "$dim-text"
@@ -84,21 +84,21 @@ dim-text = "#78849D"
 [color-theme.ui]
 "lapce.error" = "$red"
 "lapce.warn" = "$yellow"
-"lapce.dropdown_shadow" = "#000000"
-"lapce.border" = "#000000"
-"lapce.scroll_bar" = "#3E4451BB"
+"lapce.dropdown_shadow" = "#050607"
+"lapce.border" = "#303438"
+"lapce.scroll_bar" = "#4A4F52BB"
 
-"lapce.button.primary.background" = "#66E0DF"
-"lapce.button.primary.foreground" = "#0B1020"
+"lapce.button.primary.background" = "$orange"
+"lapce.button.primary.foreground" = "$black"
 
 # tab
 "lapce.tab.active.background" = "$primary-background"
 "lapce.tab.active.foreground" = "$text"
-"lapce.tab.active.underline" = "#66E0DF"
+"lapce.tab.active.underline" = "$orange"
 
 "lapce.tab.inactive.background" = "$secondary-background"
 "lapce.tab.inactive.foreground" = "$text"
-"lapce.tab.inactive.underline" = "#66E0DF66"
+"lapce.tab.inactive.underline" = "#E8A04466"
 
 "lapce.tab.separator" = ""
 
@@ -118,10 +118,10 @@ dim-text = "#78849D"
 "editor.background" = "$primary-background"
 "editor.foreground" = "$text"
 "editor.dim" = "$dim-text"
-"editor.focus" = "#F6D99A"
-"editor.caret" = "#F6D99A"
+"editor.focus" = "$orange"
+"editor.caret" = "$orange"
 "editor.selection" = "$grey"
-"editor.current_line" = "#151E36"
+"editor.current_line" = "#1B1E20"
 "editor.debug_break_line" = "#528abF37"
 "editor.link" = "$cyan"
 "editor.visible_whitespace" = "$grey"
@@ -171,14 +171,14 @@ dim-text = "#78849D"
 "panel.current.background" = "$current-background"
 "panel.current.foreground" = "$text"
 "panel.current.foreground.dim" = "$dim-text"
-"panel.hovered.background" = "#202A44"
+"panel.hovered.background" = "#282B2D"
 "panel.hovered.active.background" = "$dim-text"
 "panel.hovered.foreground" = "$text"
 "panel.hovered.foreground.dim" = "$dim-text"
 
 "status.background" = "$secondary-background"
 "status.foreground" = "$text"
-"status.modal.normal.background" = "$blue"
+"status.modal.normal.background" = "$orange"
 "status.modal.normal.foreground" = "$black"
 "status.modal.insert.background" = "$red"
 "status.modal.insert.foreground" = "$black"

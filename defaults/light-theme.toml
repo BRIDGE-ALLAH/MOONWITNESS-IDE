@@ -1,7 +1,7 @@
 #:schema ../extra/schemas/color-theme.json
 
 [color-theme]
-name = "MOONWITNESS Observatory Light"
+name = "MOONWITNESS XV — PAPER SIGNAL"
 
 [ui]
 font-family = ""
@@ -17,12 +17,12 @@ drop-shadow-width = 0
 black = "#172033"
 blue = "#5264C8"
 cyan = "#087F91"
-green = "#2F7A57"
+green = "#557A43"
 grey = "#DCE4F2"
 magenta = "#8652A8"
-orange = "#B77C36"
+orange = "#B36D2C"
 purple = "#6D56B3"
-red = "#C13F4D"
+red = "#B83E2D"
 white = "#F8FAFF"
 yellow = "#A66B1F"
 
@@ -94,13 +94,13 @@ dim-text = "#78839A"
 "lapce.border" = "#B4B4B4"
 "lapce.scroll_bar" = "#B4B4B4BB"
 
-"lapce.button.primary.background" = "#087F91"
+"lapce.button.primary.background" = "#B36D2C"
 "lapce.button.primary.foreground" = "$white"
 
 # tab
 "lapce.tab.active.background" = "$primary-background"
 "lapce.tab.active.foreground" = "$text"
-"lapce.tab.active.underline" = "#087F91"
+"lapce.tab.active.underline" = "#B36D2C"
 
 "lapce.tab.inactive.background" = "#EAEAEB"
 "lapce.tab.inactive.foreground" = "$text"
@@ -145,7 +145,7 @@ dim-text = "#78839A"
 "editor.foreground" = "$text"
 "editor.dim" = "$dim-text"
 "editor.focus" = "#172033"
-"editor.caret" = "#B77C36"
+"editor.caret" = "#B36D2C"
 "editor.selection" = "$grey"
 "editor.current_line" = "#EEF2F9"
 "editor.debug_break_line" = "#528bFF55"

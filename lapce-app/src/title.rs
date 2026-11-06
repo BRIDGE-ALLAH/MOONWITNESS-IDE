@@ -52,6 +52,14 @@ fn left(
             },
         ))
         .style(move |s| s.margin_horiz(10.0).apply_if(is_macos, |s| s.hide())),
+        label(|| "MOONWITNESS XV".to_string())
+            .style(move |s| {
+                let config = config.get();
+                s.margin_right(10.0)
+                    .font_size(10.0)
+                    .color(config.color(LapceColor::LAPCE_ICON_ACTIVE))
+                    .selectable(false)
+            }),
         not_clickable_icon(
             || LapceIcons::MENU,
             || false,
