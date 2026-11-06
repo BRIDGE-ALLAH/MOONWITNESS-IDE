@@ -61,6 +61,6 @@ This checklist defines the evidence required before calling a revision release-r
 
 ## Current evidence snapshot
 
-The repository has documentation and CI configuration changes, but no successful CI run or platform build has been verified in this work session. The repository's GitHub metadata still identifies it with inherited Lapce description/homepage values, and Issues is currently disabled. Those account-level settings require maintainer action and must not be treated as complete.
+The repository has documentation and CI configuration changes, but GitHub reports zero workflow runs and zero check runs for the current candidate commit. No successful CI run or platform build has been verified in this work session. Both `main` and `master` now point to the same candidate commit, but GitHub still designates `master` as the default branch. Repository metadata still contains the inherited Lapce description and homepage, topics are empty, and Issues is disabled. These account-level settings require maintainer action and must not be treated as complete.
 
 **Current release status: NOT RELEASE-READY — verification and repository settings remain outstanding.**
