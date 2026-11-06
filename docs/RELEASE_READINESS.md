@@ -61,15 +61,15 @@ This checklist defines the evidence required before calling a revision release-r
 
 ## Current evidence snapshot
 
-Snapshot recorded on 2026-11-06 for repository [BRIDGE-ALLAH/MW-IDE](https://github.com/BRIDGE-ALLAH/MW-IDE), branch `main`, candidate commit `f4bb835c017df4274b376a11a086c18227ad709f`.
+Snapshot recorded on 2026-11-06 for repository [BRIDGE-ALLAH/MW-IDE](https://github.com/BRIDGE-ALLAH/MW-IDE), development branch `main`.
 
-- The repository has been renamed to `MW-IDE`; GitHub confirms the existing repository identity and commit history are preserved.
-- Documentation and contribution links in the README, contribution guide, issue-template contact links, and source-build guide now use the renamed repository URL.
-- A push-triggered CI run exists for the candidate commit (run [#42136462911](https://github.com/BRIDGE-ALLAH/MW-IDE/actions/runs/42136462911)). Its jobs were queued at the time of inspection; no passing result is claimed.
-- Earlier CI runs were cancelled as newer commits were pushed. The newest candidate must complete CI before any verification state can be advanced.
+- The public repository name is `MW-IDE`; the product identity remains **MOONWITNESS IDE — The Engineering Observatory**.
+- The primary README, About dialog project link, Cargo homepage metadata, Linux AppStream URLs, build guide, and contributor guidance point to the renamed repository.
+- The dark/light application tiles, primary symbol, and default Observatory themes are present in the repository. The About dialog displays the product name and descriptor.
+- CI run [#42136835734](https://github.com/BRIDGE-ALLAH/MW-IDE/actions/runs/42136835734) was queued for branding commit `50c9c4d31162c4c31ba02f057d789f28dc0c8fae` when this snapshot was prepared. No passing result is claimed; this evidence document update also requires its own CI run.
 - GitHub still designates `master` as the default branch. `main` remains the requested development branch.
-- Repository description and homepage still contain inherited Lapce wording/URL; topics are empty; Issues is disabled. The available GitHub connection can edit repository files but does not expose repository-settings writes.
-- No successful cross-platform build, installer test, signing/notarization test, or release acceptance has been verified in this work session.
+- Repository description and homepage settings still need maintainer-level update; Issues remains disabled and topics are empty. The connected GitHub operations available here can commit files but do not expose repository-settings writes.
+- No successful cross-platform build, installer test, signing/notarization test, or release acceptance has been verified in this session.
 - MOONWITNESS XV, ARSY, LUMEN, and other ecosystem integrations remain architecture/roadmap context unless separately implemented and verified.
 
-**Current release status: NOT RELEASE-READY — candidate CI is pending, repository settings remain outstanding, and platform packaging/acceptance evidence is incomplete.**
+**Current release status: NOT RELEASE-READY — CI and platform packaging/acceptance evidence remain incomplete, and repository settings are outstanding.**

@@ -10,6 +10,15 @@ MOONWITNESS IDE is an engineering observatory: a calm, precise workspace for obs
 
 The symbol is not a claim of omniscience. It stands for disciplined observation and transparent investigation.
 
+## Official project destination
+
+- Canonical repository: https://github.com/BRIDGE-ALLAH/MW-IDE
+- Development branch: `main`
+- Public product name: **MOONWITNESS IDE**
+- Product descriptor: **The Engineering Observatory**
+
+Use the canonical repository URL in application links, package metadata, badges, issue templates, and contributor documentation. Keep the upstream Lapce project link only where attribution or technical provenance is intended.
+
 ## Logo assets
 
 - `extra/images/logo.svg` — primary scalable symbol for documentation and UI.
