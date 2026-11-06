@@ -18,6 +18,7 @@ This checklist defines the evidence required before calling a revision release-r
 - [x] CI workflow defines formatting, spelling, Clippy, cross-platform build, and documentation-test jobs.
 - [x] A dedicated Cargo `ci` profile exists for the workflow.
 - [ ] GitHub Actions is enabled and a workflow run is visible for the candidate commit.
+- [ ] A MOONWITNESS-specific release workflow has been rebuilt and audited; the inherited Lapce release workflow is intentionally disabled.
 - [ ] Formatting and spellcheck pass.
 - [ ] Clippy passes on all configured platforms.
 - [ ] Linux, macOS, and Windows builds pass.
