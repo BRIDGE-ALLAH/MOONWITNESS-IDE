@@ -2073,7 +2073,6 @@ fn main_split(window_tab_data: Rc<WindowTabData>) -> impl View {
                 .style(move |s| {
                     let config = config.get();
                     s.font_size(10.0)
-                        .letter_spacing(1.4)
                         .color(config.color(LapceColor::EDITOR_FOCUS))
                         .selectable(false)
                 }),
