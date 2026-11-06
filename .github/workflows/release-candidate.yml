@@ -1,0 +1,155 @@
+name: Release candidate
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing version tag to package (must match Cargo.toml)
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: release-${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    name: Build ${{ matrix.platform }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            platform: linux-x86_64
+          - os: macos-latest
+            platform: macos
+          - os: windows-latest
+            platform: windows-x86_64
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+
+      - name: Validate release tag against Cargo version
+        shell: bash
+        env:
+          RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+        run: |
+          VERSION="$(python -c 'import tomllib; print(tomllib.load(open("Cargo.toml", "rb"))["workspace"]["package"]["version"])')"
+          test "$RELEASE_TAG" = "v$VERSION" || {
+            echo "Tag $RELEASE_TAG does not match Cargo workspace version v$VERSION"
+            exit 1
+          }
+
+      - name: Install Rust toolchain
+        run: rustup update --no-self-update
+
+      - name: Cache Rust dependencies
+        uses: Swatinem/rust-cache@c19371144df3bb44fab255c43d04cbc2ab54d1c4
+
+      - name: Fetch locked dependencies
+        run: cargo fetch --locked
+
+      - name: Build release binary
+        run: cargo build --release --locked --bin lapce
+
+      - name: Package binary and notices
+        shell: bash
+        env:
+          PLATFORM: ${{ matrix.platform }}
+          RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+        run: |
+          python - <<'PY'
+          import os
+          import shutil
+          import zipfile
+          from pathlib import Path
+
+          executable = Path("target/release/lapce.exe" if os.name == "nt" else "target/release/lapce")
+          if not executable.is_file():
+              raise SystemExit(f"Expected release executable was not produced: {executable}")
+
+          platform = os.environ["PLATFORM"]
+          tag = os.environ["RELEASE_TAG"]
+          package_name = f"moonwitness-ide-{tag}-{platform}"
+          staging = Path("dist") / package_name
+          staging.mkdir(parents=True, exist_ok=True)
+
+          shutil.copy2(executable, staging / executable.name)
+          for filename in ("README.md", "LICENSE", "BRAND.md"):
+              source = Path(filename)
+              if not source.is_file():
+                  raise SystemExit(f"Required distribution notice is missing: {filename}")
+              shutil.copy2(source, staging / filename)
+
+          guide = Path("docs/building-from-source.md")
+          if guide.is_file():
+              shutil.copy2(guide, staging / "BUILDING.md")
+
+          archive = Path("dist") / f"{package_name}.zip"
+          with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as bundle:
+              for file in sorted(staging.rglob("*")):
+                  if file.is_file():
+                      bundle.write(file, file.relative_to(staging.parent))
+          print(f"Created {archive}")
+          PY
+
+      - name: Upload platform archive
+        uses: actions/upload-artifact@bbbca2ddaa5d8feaa63e36b76fdaad77386f024f
+        with:
+          name: release-${{ matrix.platform }}
+          path: dist/*.zip
+          if-no-files-found: error
+          retention-days: 7
+
+  draft-release:
+    name: Assemble draft GitHub release
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out tagged source
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+        with:
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref }}
+
+      - name: Download platform archives
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh run download "$GITHUB_RUN_ID" --repo "$GITHUB_REPOSITORY" --dir dist
+
+      - name: Generate SHA-256 checksums
+        run: |
+          find dist -type f -name '*.zip' -print0 | sort -z | xargs -0 sha256sum > dist/SHA256SUMS
+          test -s dist/SHA256SUMS
+
+      - name: Create or update draft release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || github.ref_name }}
+        run: |
+          mapfile -t ASSETS < <(find dist -type f \( -name '*.zip' -o -name 'SHA256SUMS' \) | sort)
+          test "${#ASSETS[@]}" -ge 4
+          if gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            IS_DRAFT="$(gh release view "$RELEASE_TAG" --repo "$GITHUB_REPOSITORY" --json isDraft --jq .isDraft)"
+            test "$IS_DRAFT" = "true" || {
+              echo "Refusing to modify an already-published release."
+              exit 1
+            }
+            gh release upload "$RELEASE_TAG" "${ASSETS[@]}" --repo "$GITHUB_REPOSITORY" --clobber
+          else
+            gh release create "$RELEASE_TAG" "${ASSETS[@]}" \
+              --repo "$GITHUB_REPOSITORY" \
+              --draft \
+              --verify-tag \
+              --title "MOONWITNESS IDE $RELEASE_TAG" \
+              --generate-notes
+          fi

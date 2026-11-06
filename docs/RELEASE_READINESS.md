@@ -18,7 +18,7 @@ This checklist defines the evidence required before calling a revision release-r
 - [x] CI workflow defines formatting, spelling, Clippy, cross-platform build, and documentation-test jobs.
 - [x] A dedicated Cargo `ci` profile exists for the workflow.
 - [x] GitHub Actions is enabled and workflow results are visible for the current branch.
-- [ ] A MOONWITNESS-specific release workflow has been rebuilt and audited; the inherited Lapce release workflow is intentionally disabled.
+- [ ] The MOONWITNESS draft release workflow has completed a successful end-to-end tagged run and has been audited; the inherited Lapce release workflow is intentionally disabled.
 - [ ] Formatting and spellcheck pass on the remote candidate revision.
 - [ ] Clippy passes on all configured platforms.
 - [ ] Linux, macOS, and Windows builds pass.
@@ -59,7 +59,7 @@ This checklist defines the evidence required before calling a revision release-r
 - [ ] Upgrade and rollback guidance is available.
 - [ ] A maintainer has completed release acceptance.
 
-## Current evidence snapshot
+## Release candidate workflow\n\nThe repository now includes a tagged, three-platform draft-release workflow. It packages executable ZIP archives and SHA-256 checksums, validates the tag against the Cargo workspace version, and intentionally creates only a draft release. The workflow has not yet been exercised against a release tag. Its archives are not signed installers, notarized bundles, or distribution packages. See [RELEASE_PROCESS.md](RELEASE_PROCESS.md).\n\n## Current evidence snapshot
 
 Snapshot recorded on 2026-11-06 for repository [BRIDGE-ALLAH/MW-IDE](https://github.com/BRIDGE-ALLAH/MW-IDE), default/development branch `main`.
 
@@ -75,4 +75,4 @@ Snapshot recorded on 2026-11-06 for repository [BRIDGE-ALLAH/MW-IDE](https://git
 - The current local changes are being prepared for a commit and push to `main` so CI can validate that exact revision. Local build/startup observations are not cross-platform release evidence.
 - MOONWITNESS XV, ARSY, LUMEN, and other ecosystem integrations remain architecture/roadmap context unless separately implemented and verified.
 
-**Current release status: NOT RELEASE-READY — CI and platform packaging/acceptance evidence remain incomplete, and repository settings are outstanding.**
+**Current release status: NOT RELEASE-READY — the current CI run is pending, the draft-release workflow has not yet been exercised with a version tag, and platform runtime, installer/signing, security, and maintainer acceptance evidence remain incomplete.**
