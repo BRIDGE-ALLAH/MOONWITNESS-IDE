@@ -15,7 +15,7 @@ Use a current stable Rust toolchain that satisfies the repository's declared min
 
 ```sh
 git clone https://github.com/BRIDGE-ALLAH/MW-IDE.git
-cd MOONWITNESS-IDE
+cd MW-IDE
 ```
 
 ## Linux

@@ -21,7 +21,7 @@ use crate::{
 struct AboutUri {}
 
 impl AboutUri {
-    const PROJECT: &'static str = "https://github.com/BRIDGE-ALLAH/MOONWITNESS-IDE";
+    const PROJECT: &'static str = "https://github.com/BRIDGE-ALLAH/MW-IDE";
     const UPSTREAM: &'static str = "https://github.com/lapce/lapce";
     const CODICONS: &'static str = "https://github.com/microsoft/vscode-codicons";
 }
