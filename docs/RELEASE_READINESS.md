@@ -61,14 +61,15 @@ This checklist defines the evidence required before calling a revision release-r
 
 ## Current evidence snapshot
 
-Snapshot recorded on 2026-11-06 for candidate commit `3bc06d481f908fd8bee180f33c11fb8c77d5ca92` on `main`.
+Snapshot recorded on 2026-11-06 for repository [BRIDGE-ALLAH/MW-IDE](https://github.com/BRIDGE-ALLAH/MW-IDE), branch `main`, candidate commit `f4bb835c017df4274b376a11a086c18227ad709f`.
 
-- The CI workflow is present and a push-triggered run exists for this exact candidate commit (run [#42135903149](https://github.com/BRIDGE-ALLAH/MOONWITNESS-IDE/actions/runs/42135903149)). At the time of this snapshot, its jobs are queued; no passing result is claimed.
-- A prior run on the same branch for the parent revision was cancelled. Separate runs triggered on `master` are not evidence for the current `main` candidate.
-- The candidate commit updates the Linux application metadata Help URL to point at the `main` branch.
-- GitHub still designates `master` as the default branch. The `main` branch is the requested development branch, but the default-branch setting has not been changed.
-- Repository description and homepage still contain inherited Lapce wording/URL; topics are empty; Issues is disabled. These repository-level settings are not editable through the connected GitHub operations available in this session.
+- The repository has been renamed to `MW-IDE`; GitHub confirms the existing repository identity and commit history are preserved.
+- Documentation and contribution links in the README, contribution guide, issue-template contact links, and source-build guide now use the renamed repository URL.
+- A push-triggered CI run exists for the candidate commit (run [#42136462911](https://github.com/BRIDGE-ALLAH/MW-IDE/actions/runs/42136462911)). Its jobs were queued at the time of inspection; no passing result is claimed.
+- Earlier CI runs were cancelled as newer commits were pushed. The newest candidate must complete CI before any verification state can be advanced.
+- GitHub still designates `master` as the default branch. `main` remains the requested development branch.
+- Repository description and homepage still contain inherited Lapce wording/URL; topics are empty; Issues is disabled. The available GitHub connection can edit repository files but does not expose repository-settings writes.
 - No successful cross-platform build, installer test, signing/notarization test, or release acceptance has been verified in this work session.
-- The MOONWITNESS XV, ARSY, LUMEN, and other ecosystem integrations remain roadmap/architecture context unless separately implemented and verified.
+- MOONWITNESS XV, ARSY, LUMEN, and other ecosystem integrations remain architecture/roadmap context unless separately implemented and verified.
 
 **Current release status: NOT RELEASE-READY — candidate CI is pending, repository settings remain outstanding, and platform packaging/acceptance evidence is incomplete.**
