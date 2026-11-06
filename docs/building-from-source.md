@@ -1,50 +1,100 @@
-## Building from source
+# Building MOONWITNESS IDE from source
 
-It is easy to build Lapce from source on a GNU/Linux distribution. Cargo handles the build process, all you need to do, is ensure the correct dependencies are installed.
+MOONWITNESS IDE is a Rust desktop application based on the Lapce codebase. The public product name is MOONWITNESS IDE; some internal Cargo package, executable, and feature identifiers still use `lapce` for compatibility.
 
-1. Install the Rust compiler and Cargo using [`rustup.rs`](https://rustup.rs/). If you already have the toolchain, ensure you are using latest Rust version.
+## Requirements
 
-2. Install dependencies for your operating system:
+- Git
+- Rust and Cargo via [rustup](https://rustup.rs/)
+- Rust toolchain compatible with the workspace's `rust-version` in the root `Cargo.toml`
+- Native build dependencies for your operating system
 
-#### Ubuntu
+Use a current stable Rust toolchain that satisfies the repository's declared minimum version. The CI workflow updates the installed stable toolchain before building.
+
+## Get the source
+
 ```sh
-sudo apt install clang libxkbcommon-x11-dev pkg-config libvulkan-dev libwayland-dev xorg-dev libxcb-shape0-dev libxcb-xfixes0-dev
+git clone https://github.com/BRIDGE-ALLAH/MOONWITNESS-IDE.git
+cd MOONWITNESS-IDE
 ```
-#### Fedora
+
+## Linux
+
+On Ubuntu, install the same native dependencies used by CI:
+
+```sh
+sudo make ubuntu-deps
+```
+
+On Fedora, the upstream build environment has used the following package set; package names can vary by Fedora release:
+
 ```sh
 sudo dnf install clang libxkbcommon-x11-devel libxcb-devel vulkan-loader-devel wayland-devel openssl-devel pkgconf
 ```
-#### Void Linux
-```sh
-sudo xbps-install -S base-devel clang libxkbcommon-devel vulkan-loader wayland-devel
-```
 
-3. Clone this repository (this command will clone to your home directory):
-```sh
-git clone https://github.com/lapce/lapce.git ~/lapce
-```
-
-4. `cd` into the repository, and run the build command with the release flag
-```sh
-cd ~/lapce
-```
+Then build:
 
 ```sh
-cargo install --path . --bin lapce --profile release-lto --locked
+cargo fetch --locked
+cargo build --locked
 ```
 
-> If you use a different distribution, and are having trouble finding appropriate dependencies, let us know in an issue!
+## macOS
 
-Once Lapce is compiled, the executable will be available in `$HOME/.cargo/bin/lapce` and should be available in `PATH` automatically.
+1. Install Xcode Command Line Tools: `xcode-select --install`.
+2. Install Rust with rustup.
+3. Clone the repository and run the build commands below.
 
-## Building using Docker or Podman
+```sh
+cargo fetch --locked
+cargo build --locked
+```
 
-Packages available in releases are built using containers based on multi-stage Dockerfiles. To easily orchestrate builds, there is a `docker-bake.hcl` manifest in root of repository that defines all stages and targets.
-If you want to build all packages for ubuntu, you can run `RELEASE_TAG_NAME=nightly docker buildx bake ubuntu` (`RELEASE_TAG_NAME` is a required environment variable used to tell what kind of release is being built as well as baking in the version itself).
-To scope in to specific distribution version, you can define target with it's version counterpart from matrix, e.g. to build only Ubuntu Focal package, you can run `RELEASE_TAG_NAME=nightly docker buildx bake ubuntu-focal`.
-Additionally to building multiple OS versions at the same time, Docker-based builds will also try to cross-compile Lapce for other architectures.
-This does not require QEMU installed as it's done via true cross-compilation meaning `HOST` will run your native OS/CPU architecture and `TARGET` will be the wanted architecture, instead of spawning container that's running OS using `TARGET` architecture.
+## Windows
 
-> ![WARNING]
-> Do not run plain targets like `ubuntu` or `fedora` if you don't have very powerful machine, as it will spawn many concurrent jobs
-> which will take a long time to build.
+1. Install the Visual Studio Build Tools with the C++ build tools workload and Windows SDK.
+2. Install Rust with rustup using the MSVC toolchain.
+3. Clone the repository and run the build commands below in a supported developer shell.
+
+```powershell
+cargo fetch --locked
+cargo build --locked
+```
+
+## Run the application
+
+The inherited executable name remains `lapce` until a separately tested compatibility migration is completed.
+
+```sh
+cargo run --bin lapce
+```
+
+A normal development build is placed under `target/debug/`. Release builds can be produced with:
+
+```sh
+cargo build --release --locked
+```
+
+## CI-equivalent checks
+
+The repository's GitHub Actions workflow currently runs formatting, Clippy, cross-platform builds, and workspace documentation tests. To run the corresponding checks locally:
+
+```sh
+cargo fmt --all --check
+cargo clippy --profile ci
+cargo test --profile ci --doc --workspace
+cargo build --profile ci --frozen
+```
+
+On Ubuntu, install native dependencies with `sudo make ubuntu-deps` before running the build and Clippy commands. CI also performs a portable-feature build on Windows.
+
+A successful local build applies only to the machine and toolchain used. It does not establish that other platforms, installers, signing, packaging, or release acceptance have been verified.
+
+## Troubleshooting and reporting
+
+- Record the operating system, architecture, Rust version (`rustc --version`), exact command, and complete relevant error output.
+- Confirm that the Rust toolchain satisfies the root manifest's declared `rust-version`.
+- Avoid deleting or renaming internal `lapce` package and executable identifiers unless the change includes a compatibility plan and platform validation.
+- Report reproducible problems through the [GitHub issue tracker](https://github.com/BRIDGE-ALLAH/MOONWITNESS-IDE/issues).
+
+For inherited upstream implementation details, consult [Lapce](https://github.com/lapce/lapce). This repository's build instructions and issue tracker are the source of truth for MOONWITNESS IDE changes.
