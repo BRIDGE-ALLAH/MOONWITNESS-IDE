@@ -95,6 +95,6 @@ A successful local build applies only to the machine and toolchain used. It does
 - Record the operating system, architecture, Rust version (`rustc --version`), exact command, and complete relevant error output.
 - Confirm that the Rust toolchain satisfies the root manifest's declared `rust-version`.
 - Avoid deleting or renaming internal `lapce` package and executable identifiers unless the change includes a compatibility plan and platform validation.
-- Report reproducible problems through the [GitHub issue tracker](https://github.com/BRIDGE-ALLAH/MOONWITNESS-IDE/issues).
+- Report reproducible problems through the repository's Issues tab after Issues has been enabled by the maintainer. Until then, contact the maintainer through the GitHub profile linked from this repository.
 
-For inherited upstream implementation details, consult [Lapce](https://github.com/lapce/lapce). This repository's build instructions and issue tracker are the source of truth for MOONWITNESS IDE changes.
+For inherited upstream implementation details, consult [Lapce](https://github.com/lapce/lapce). This repository's build instructions and project policies are the source of truth for MOONWITNESS IDE changes.
