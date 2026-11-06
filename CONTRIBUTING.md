@@ -5,7 +5,7 @@ Thank you for considering a contribution to MOONWITNESS IDE. The project is an e
 ## Before you start
 
 - Read the [README](README.md), [product blueprint](BLUEPRINT.md), and [brand system](BRAND.md).
-- Review the repository's [issues](https://github.com/BRIDGE-ALLAH/MOONWITNESS-IDE/issues) before starting substantial work.
+- Review the repository's [issues](https://github.com/BRIDGE-ALLAH/MW-IDE/issues) before starting substantial work.
 - Keep the distinction between inherited Lapce code, MOONWITNESS modifications, original work, and planned features clear.
 - Preserve upstream license notices and attribution. Do not remove or rewrite copyright history.
 
