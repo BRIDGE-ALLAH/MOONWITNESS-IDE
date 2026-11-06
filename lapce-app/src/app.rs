@@ -3883,7 +3883,19 @@ pub fn launch() {
                 return;
             }
             Err(err) => {
-                tracing::error!("{:?}", err);
+                let is_missing_socket =
+                    err.chain().any(|cause| {
+                        cause.downcast_ref::<std::io::Error>().is_some_and(
+                            |io_err| io_err.kind() == std::io::ErrorKind::NotFound,
+                        )
+                    });
+                if is_missing_socket {
+                    tracing::debug!("No existing instance socket: {err:#}");
+                } else {
+                    tracing::error!(
+                        "Failed to connect to existing instance: {err:#}"
+                    );
+                }
             }
         }
     }

@@ -1,3 +1,6 @@
+[alias]
+dev = "run --bin lapce -- --wait"
+
 # Link runtime statically so Visual C++ Redist is not required
 [target.'cfg(all(windows, target_env = "msvc"))']
 rustflags = ["-C", "target-feature=+crt-static"]

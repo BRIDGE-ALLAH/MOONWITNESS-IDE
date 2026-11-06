@@ -377,9 +377,11 @@ fn right(
                         MenuItem::new("No update available").enabled(false)
                     })
                     .separator()
-                    .entry(MenuItem::new("About MOONWITNESS IDE").action(move || {
-                        workbench_command.send(LapceWorkbenchCommand::ShowAbout)
-                    }))
+                    .entry(MenuItem::new("About MOONWITNESS IDE").action(
+                        move || {
+                            workbench_command.send(LapceWorkbenchCommand::ShowAbout)
+                        },
+                    ))
             }),
             container(label(|| "1".to_string()).style(move |s| {
                 let config = config.get();

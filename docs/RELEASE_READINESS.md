@@ -8,18 +8,18 @@ This checklist defines the evidence required before calling a revision release-r
 - [x] Upstream Lapce relationship and compatibility-retained identifiers documented.
 - [x] Build instructions point to the MOONWITNESS IDE repository.
 - [x] Contribution, pull request, issue-form, and security-reporting guidance added.
-- [ ] GitHub repository description and homepage updated to MOONWITNESS IDE.
-- [ ] Relevant repository topics added.
+- [x] GitHub repository description and homepage updated to MOONWITNESS IDE.
+- [x] Relevant repository topics added (`rust`, `ide`, `code-editor`, `developer-tools`, `moonwitness`).
 - [x] Issues feature enabled so issue forms and the documented issue workflow are usable.
-- [ ] Default branch reviewed and intentionally selected.
+- [x] Default branch reviewed and intentionally selected (`main`).
 
 ## 2. Source and build verification
 
 - [x] CI workflow defines formatting, spelling, Clippy, cross-platform build, and documentation-test jobs.
 - [x] A dedicated Cargo `ci` profile exists for the workflow.
-- [x] GitHub Actions is enabled and a workflow run is visible for the current candidate commit (queued; completion not yet verified).
+- [x] GitHub Actions is enabled and workflow results are visible for the current branch.
 - [ ] A MOONWITNESS-specific release workflow has been rebuilt and audited; the inherited Lapce release workflow is intentionally disabled.
-- [ ] Formatting and spellcheck pass.
+- [ ] Formatting and spellcheck pass on the remote candidate revision.
 - [ ] Clippy passes on all configured platforms.
 - [ ] Linux, macOS, and Windows builds pass.
 - [ ] Workspace documentation tests pass.
@@ -61,15 +61,18 @@ This checklist defines the evidence required before calling a revision release-r
 
 ## Current evidence snapshot
 
-Snapshot recorded on 2026-11-06 for repository [BRIDGE-ALLAH/MW-IDE](https://github.com/BRIDGE-ALLAH/MW-IDE), development branch `main`.
+Snapshot recorded on 2026-11-06 for repository [BRIDGE-ALLAH/MW-IDE](https://github.com/BRIDGE-ALLAH/MW-IDE), default/development branch `main`.
 
 - The public repository name is `MW-IDE`; the product identity remains **MOONWITNESS IDE — The Engineering Observatory**.
 - The primary README, About dialog project link, Cargo homepage metadata, Linux AppStream URLs, build guide, and contributor guidance point to the renamed repository.
 - The dark/light application tiles, primary symbol, and default Observatory themes are present in the repository. The About dialog displays the product name and descriptor.
-- CI run [#12](https://github.com/BRIDGE-ALLAH/MW-IDE/actions/runs/42137421399) is attached to current `main` head `6887697720a4e575feb7065ef97cdd25f675d478`. At the latest inspection it was **queued**. The preceding runs were cancelled when newer commits were pushed; no passing result is claimed.
-- GitHub still designates `master` as the default branch. `main` remains the requested development branch.
-- Repository settings are partially outstanding: description is still the inherited generic text (“Lightning-fast and Powerful Code Editor written in Rust”), homepage still points to `https://lap.dev/lapce/`, and topics are empty. Issues is enabled. The connected GitHub operations available here expose repository reads and source commits, but no repository-settings write action. The maintainer must update Description, Homepage, Topics, and the default branch in GitHub Settings.
-- No successful cross-platform build, installer test, signing/notarization test, or release acceptance has been verified in this session.
+- The latest inspected CI run before the current changes, [42137472459](https://github.com/BRIDGE-ALLAH/MW-IDE/actions/runs/42137472459), failed at `cargo fmt --all --check` on About-menu formatting in `lapce-app/src/title.rs`. The focused formatting correction passes locally and is included in the pending push for a fresh CI run.
+- Local checks on the current working tree: `cargo fmt --all --check` passed; `cargo clippy --profile ci` completed with 129 warnings; `cargo check -p lapce-app -p lapce-proxy`, `cargo build --bin lapce`, `cargo test --profile ci --doc --workspace`, and `cargo build --profile ci --frozen` passed. The doc-test run passed 1 test and ignored 1. These local results do not establish cross-platform CI success.
+- Windows runtime smoke test on an NVIDIA GeForce GT 610: `cargo dev` opened a visible `MW-IDE - Lapce` window using the user-local OpenGL override. The initial missing-instance socket and stale PATH entry were logged at debug level; no app/proxy startup error was observed. This does not verify other GPUs or operating systems.
+- The default branch is `main`. Issues is enabled; no open issues were listed when checked.
+- Repository metadata now identifies MOONWITNESS IDE. Description is “MOONWITNESS IDE is an open-source Rust code editor evolving into an evidence-driven engineering workspace.” Homepage is the canonical repository URL; topics are `rust`, `ide`, `code-editor`, `developer-tools`, and `moonwitness`.
+- No successful cross-platform CI, installer test, signing/notarization test, or release acceptance has been verified for the current working tree.
+- The current local changes are being prepared for a commit and push to `main` so CI can validate that exact revision. Local build/startup observations are not cross-platform release evidence.
 - MOONWITNESS XV, ARSY, LUMEN, and other ecosystem integrations remain architecture/roadmap context unless separately implemented and verified.
 
 **Current release status: NOT RELEASE-READY — CI and platform packaging/acceptance evidence remain incomplete, and repository settings are outstanding.**

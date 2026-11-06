@@ -145,8 +145,16 @@ pub fn register_lapce_path() -> Result<()> {
     let current_path = std::env::var("PATH")?;
     let paths = std::env::split_paths(&current_path);
     for path in paths {
-        if exedir == path.canonicalize()? {
-            return Ok(());
+        match path.canonicalize() {
+            Ok(path) if exedir == path => return Ok(()),
+            Ok(_) => {}
+            Err(err) if err.kind() == std::io::ErrorKind::NotFound => {
+                tracing::debug!(
+                    "Skipping missing PATH entry {}: {err}",
+                    path.display()
+                );
+            }
+            Err(err) => return Err(err.into()),
         }
     }
     let paths = std::env::split_paths(&current_path);

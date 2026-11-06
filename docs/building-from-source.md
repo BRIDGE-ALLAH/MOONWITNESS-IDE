@@ -66,8 +66,10 @@ cargo build --locked
 The inherited executable name remains `lapce` until a separately tested compatibility migration is completed.
 
 ```sh
-cargo run --bin lapce
+cargo dev
 ```
+
+`cargo dev` is a project-local Cargo alias for `cargo run --bin lapce -- --wait`. It keeps the app attached to the terminal. On Windows with an older GPU that cannot use the default backend, set `WGPU_BACKEND=gl` in the user Cargo config (`%CARGO_HOME%\config.toml`) or for one session with `$env:WGPU_BACKEND = 'gl'`. Keep this compatibility override out of the shared project config unless it has been validated across supported platforms. To run without waiting for the app to close, use `cargo run --bin lapce`.
 
 A normal development build is placed under `target/debug/`. Release builds can be produced with:
 
